@@ -1,5 +1,6 @@
 package com.gestionressources.gres.Model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
@@ -30,6 +31,8 @@ public class User implements UserDetails {
   private String firstname;
   private String lastname;
   private String email;
+
+  @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
   private String password;
 
   @Enumerated(EnumType.STRING)
