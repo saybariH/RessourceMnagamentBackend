@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/api/v1/auth")
 @RequiredArgsConstructor
-//@CrossOrigin(origins = "http://localhost:3000")
-@CrossOrigin(origins = "chrome-extension://aejoelaoggembcahagimdiliamlcdmfm")
+@CrossOrigin(origins = "http://localhost:3000")
+//@CrossOrigin(origins = "chrome-extension://aejoelaoggembcahagimdiliamlcdmfm")
 public class AuthenticationController {
 
   private final AuthenticationService service;
@@ -28,6 +28,7 @@ public class AuthenticationController {
   public ResponseEntity<AuthenticationResponse> authenticate(
       @RequestBody AuthenticationRequest request
   ) {
+    System.out.println("Hello world");
     return ResponseEntity.ok(service.authenticate(request));
   }
 

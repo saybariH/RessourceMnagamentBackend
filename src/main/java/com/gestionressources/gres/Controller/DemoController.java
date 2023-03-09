@@ -33,4 +33,9 @@ public class DemoController {
   public void register(@RequestBody RegisterRequest request){
       userServices.register(request);
   }
+
+  @DeleteMapping("/{id}")
+  public void deleteUser(@PathVariable int id){
+    userServices.deleteUser(id);
+  }
 }
